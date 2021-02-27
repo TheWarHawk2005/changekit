@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>ChangeKit</title>
+
+<style>
+# changelog {
+padding: 10px;
+}
+
+body {
+font-family: arial;
+margin-top: 25px;
+margin-left: 50px;
+margin-right: 50px;
+}
+
+body ::selection {
+  background: #f75252;
+}
+
+.verticalLine {
+  border-left: thick solid #f75252;
+}
+
+.cat p {
+    display: list-item;
+    margin-left: 25px;
+}
+
+.cat {
+	outline: 0px solid transparent;
+}
+
+</style>
+
+<body>
+
+<h1>ChangeKit</h1>
+
+<label for="colorPicker">Header Color</label>
+<input type="color" id="colorPicker" onsubmit="setColors()" value="#f75252"></input>
+
+<div id="changelog">
+</div>
+<button id="new-category" onclick="newCategory()">New Category</button>
+<br>
+<button onclick="compileHTML()"> Compile </button>
+
+<div id="compiledHTML">
+</div>
+</body>
+
+<script src="script.js"></script>
+<script>
+newCategory()
+</script>
+</html>
