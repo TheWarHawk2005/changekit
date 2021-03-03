@@ -39,8 +39,29 @@ function updateColors() {
 	
 	var color = document.getElementById("colorPicker").value
 	var headers = document.getElementsByClassName("verticalLine")
-  
+	
+	
 	for (var i = 0; i < headers.length; i++) {
         headers[i].style.borderLeft = "thick solid" + color
-    }
+  }
+}
+
+function updateBackground() {
+var radios = document.getElementById("bgSelector")
+for (var i = 0, length = radios.length; i < length; i++) {
+  if (radios[i].checked) {
+	var selected = radios[i].value
+    if (selected == "dark") {
+		document.body.style.backgroundColor = '#0a0a0a'
+		document.body.style.color = '#ffffff'
+	}
+    if (selected == "light") {
+		document.body.style.backgroundColor = '#ffffff'
+		document.body.style.color = '#0a0a0a'
+		}
+
+    // only one radio can be logically checked, don't check the rest
+    break
+  }
+}
 }
