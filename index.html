@@ -12,6 +12,7 @@ font-family: arial;
 margin-top: 25px;
 margin-left: 50px;
 margin-right: 50px;
+
 }
 
 body ::selection {
@@ -29,22 +30,43 @@ body ::selection {
 
 .cat {
 	outline: 0px solid transparent;
+	color: #000000
+}
+
+#compileButton {
+	
+	position: fixed;
+	bottom: 0%;
+	left: 12%;
+}
+
+#new-category {
+	position: fixed;
+	bottom: 0%;
 }
 
 </style>
 
 <body>
 
-<h1>ChangeKit</h1>
+<h1>ChangeKit</h1> 
 
 <label for="colorPicker">Header Color</label>
-<input type="color" id="colorPicker" onsubmit="setColors()" value="#f75252"></input>
+<input type="color" id="colorPicker" onsubmit="setColors()" value="#f75252">
+
+<form onchange="updateBackground()" id="bgSelector">
+  <input type="radio" id="dark" name="background" value="dark">
+  <label for="dark">Dark</label><br>
+  <input type="radio" id="light" name="background" value="light" checked="checked">
+  <label for="light">Light</label>
+</form>
+
 
 <div id="changelog">
 </div>
 <button id="new-category" onclick="newCategory()">New Category</button>
 <br>
-<button onclick="compileHTML()"> Compile </button>
+<button onclick="compileHTML()" id="compileButton"> Compile </button>
 
 <div id="compiledHTML">
 </div>
